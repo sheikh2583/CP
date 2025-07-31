@@ -1,4 +1,10 @@
 #!/bin/bash
+echo "# 🧠 Sheikh's Competitive Programming Repo" > README.md
+echo "" >> README.md
+echo "## 📁 Directory Structure:" >> README.md
+echo '```' >> README.md
+tree -I '.git|*.exe|*.out|*.in|*.o|__pycache__|.vscode' -L 3 >> README.md
+echo '```' >> README.md
 
 cd "$(dirname "$0")"
 timestamp=$(date "+%Y-%m-%d %H:%M:%S")
