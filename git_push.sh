@@ -1,20 +1,17 @@
 #!/bin/bash
 
-# Git auto-update script with logging
-
-# Change to your repo path (optional if you always run it from root)
 cd "$(dirname "$0")"
-
-# Get timestamp
 timestamp=$(date "+%Y-%m-%d %H:%M:%S")
-
-# Default commit message if none is passed
 msg="${1:-Auto update at $timestamp}"
 
-# Git operations
+# 1. Update README.md before committing
+tree -I '.git|*.exe|*.out|*.in|*.o|__pycache__|.vscode' -L 3 > README.md
+
+# 2. Standard git push routine
 git add .
 git commit -m "$msg"
 git push
 
-# Logging commit
+# 3. Log the commit message
 echo "[$timestamp] $msg" >> .gitlog.txt
+
