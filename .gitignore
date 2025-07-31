@@ -1,0 +1,8 @@
+*.exe
+*.o
+*.out
+*.class
+*.pyc
+.vscode/
+.idea/
+.gitlog.txt
