@@ -1,23 +1,31 @@
 #!/bin/bash
+
+# Move to script's directory
+cd "$(dirname "$0")"
+
+# Get current timestamp
+timestamp=$(date "+%Y-%m-%d %H:%M:%S")
+msg="${1:-Auto update at $timestamp}"
+
+# Count solved .cpp problems from all sources
+count=$(find ./CSES ./Codeforces -type f -name "*.cpp" | wc -l)
+
+# Update README.md
 echo "# 🧠 Sheikh's Competitive Programming Repo" > README.md
+echo "" >> README.md
+echo "### 🔢 Solved Problems: $count" >> README.md
 echo "" >> README.md
 echo "## 📁 Directory Structure:" >> README.md
 echo '```' >> README.md
 tree -I '.git|*.exe|*.out|*.in|*.o|__pycache__|.vscode' -L 3 >> README.md
 echo '```' >> README.md
 
-cd "$(dirname "$0")"
-timestamp=$(date "+%Y-%m-%d %H:%M:%S")
-msg="${1:-Auto update at $timestamp}"
-
-# 1. Update README.md before committing
-tree -I '.git|*.exe|*.out|*.in|*.o|__pycache__|.vscode' -L 3 > README.md
-
-# 2. Standard git push routine
+# Git operations
 git add .
 git commit -m "$msg"
+git pull --rebase origin main
 git push
 
-# 3. Log the commit message
+# Log commit to local file
 echo "[$timestamp] $msg" >> .gitlog.txt
 

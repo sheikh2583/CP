@@ -1,3 +1,9 @@
+# 🧠 Sheikh's Competitive Programming Repo
+
+### 🔢 Solved Problems: 3
+
+## 📁 Directory Structure:
+```
 .
 ├── Codeforces
 ├── CSES
@@ -11,3 +17,4 @@
     └── graph
 
 5 directories, 5 files
+```
