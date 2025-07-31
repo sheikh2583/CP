@@ -1,8 +1,0 @@
-*.exe
-*.out
-*.o
-*.class
-*.pyc
-.vscode/
-.idea/
-
