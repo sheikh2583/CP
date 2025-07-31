@@ -1,4 +1,4 @@
-// Problem: Missing Number
+// Problem: Repetitions
 // Link: https://cses.fi/problemset/task/1069
 // Author: SegFaultSniper
 // Status: Solved

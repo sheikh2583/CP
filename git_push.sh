@@ -11,7 +11,7 @@ msg="${1:-Auto update at $timestamp}"
 count=$(find ./CSES ./Codeforces -type f -name "*.cpp" | wc -l)
 
 # Update README.md
-echo "# 🧠 Sheikh's Competitive Programming Repo" > README.md
+echo "# My Competitive Programming Repo" > README.md
 echo "" >> README.md
 echo "### 🔢 Solved Problems: $count" >> README.md
 echo "" >> README.md
